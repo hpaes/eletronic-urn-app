@@ -2,32 +2,32 @@
   <div class="urn-keyboard">
     <div class="urn-keyboard-numeric">
       <div class="urn-keyboard-numeric-row">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
+        <button v-on:click="addNumber(1)">1</button>
+        <button v-on:click="addNumber(2)">2</button>
+        <button v-on:click="addNumber(3)">3</button>
       </div>
 
       <div class="urn-keyboard-numeric-row">
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
+        <button v-on:click="addNumber(4)">4</button>
+        <button v-on:click="addNumber(5)">5</button>
+        <button v-on:click="addNumber(6)">6</button>
       </div>
 
       <div class="urn-keyboard-numeric-row">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button v-on:click="addNumber(7)">7</button>
+        <button v-on:click="addNumber(8)">8</button>
+        <button v-on:click="addNumber(9)">9</button>
       </div>
 
       <div class="urn-keyboard-numeric-row">
-        <button>0</button>
+        <button v-on:click="addNumber(0)">0</button>
       </div>
     </div>
 
     <div class="urn-keyboard-actions">
-      <button class="btn-branco">BRANCO</button>
-      <button class="btn-corrige">CORRIGE</button>
-      <button class="btn-confirma">CONFIRMA</button>
+      <button class="btn-branco" v-on:click="blankVoting()">BRANCO</button>
+      <button class="btn-corrige" v-on:click="correct()">CORRIGE</button>
+      <button class="btn-confirma" v-on:click="confirm()">CONFIRMA</button>
     </div>
   </div>
 </template>
@@ -35,6 +35,12 @@
 <script>
 export default {
   name: "Keyboard",
+  props: {
+    addNumber: Function,
+    correct: Function,
+    confirm: Function,
+    blankVoting: Function,
+  },
 };
 </script>
 
